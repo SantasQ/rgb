@@ -37,29 +37,29 @@
         return { x: d.x, y: d.y, z: d.z, style: d.style, size: d.value };
       });
 
-      new vis.Graph3d(document.getElementById("graph"), data, {
-        width: '600px',
-        height: '600px',
-        style: 'dot-color',
-        showPerspective: true,
-        showGrid: true,
-        showShadow: false,
-        keepAspectRatio: true,
-        verticalRatio: 1.0,
-        showLegend: false,
-        xLabel: 'Red',
-        yLabel: 'Green',
-        zLabel: 'Blue',
-        xMax: 255,
-        yMax: 255,
-        zMax: 255,
-        cameraPosition: { horizontal: 1.0, vertical: 0.5, distance: 1.8 },
-        labelFontSize: 20, // 軸ラベル（Red, Green, Blue）の大きさ
-        axisFontSize: 18,  // 軸の数字（0〜255など）の大きさ
-        gridColor: '#aaaaaa',   // グリッド線を薄いグレーに
-        axisColor: '#ffffff',   // 軸線は真っ白
-        labelColor: '#ffffff'   // ラベルも白
-      });
+new vis.Graph3d(document.getElementById("graph"), data, {
+  width: '600px',
+  height: '600px',
+  style: 'dot-color',
+  showPerspective: true,
+  showGrid: true,
+  showShadow: false,
+  keepAspectRatio: false, // ← ここをfalseに変更！
+  verticalRatio: 1.0,
+  showLegend: false,
+  xLabel: 'Red',
+  yLabel: 'Green',
+  zLabel: 'Blue',
+  xMax: 255,
+  yMax: 255,
+  zMax: 255,
+  cameraPosition: { horizontal: 1.0, vertical: 0.5, distance: 1.8 },
+  labelFontSize: 20,
+  axisFontSize: 18,
+  gridColor: '#aaaaaa',
+  axisColor: '#ffffff',
+  labelColor: '#ffffff'
+});
     }
   </script>
 </body>
